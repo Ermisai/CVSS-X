@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Setup Environment for XVSS-X Dataset Pipeline and Evaluation Suite
+# Setup Environment for CVSS-X Dataset Pipeline and Evaluation Suite
 # ==============================================================================
 set -euo pipefail
 
-ENV_NAME="xvss-x"
+ENV_NAME="cvss-x"
 PYTHON_VERSION="3.10"
 
 echo "=================================================================="
-echo "  Setting up XVSS-X Environment (Python ${PYTHON_VERSION})"
+echo "  Setting up CVSS-X Environment (Python ${PYTHON_VERSION})"
 echo "=================================================================="
 
 # Check if conda is available, otherwise suggest virtualenv

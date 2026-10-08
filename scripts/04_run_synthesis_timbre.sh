@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Step 4: OmniVoice Speech Synthesis - Timbre-Transferred Mode (XVSS-X-T)
+# Step 4: OmniVoice Speech Synthesis - Timbre-Transferred Mode (CVSS-X-T)
 # Zero-shot cross-lingual voice cloning conditioned on source English audio.
 # ==============================================================================
 set -euo pipefail
@@ -13,7 +13,7 @@ BATCH_SIZE="${BATCH_SIZE:-16}"
 CUDA_DEV="${CUDA_VISIBLE_DEVICES:-0}"
 
 echo "=================================================================="
-echo "  XVSS-X Step 4: OmniVoice Synthesis (XVSS-X-T Timbre)"
+echo "  CVSS-X Step 4: OmniVoice Synthesis (CVSS-X-T Timbre)"
 echo "  Translated Dir: ${TRANSLATED_DIR}"
 echo "  Output Dir:     ${OUTPUT_DIR}"
 echo "  Languages:      ${LANGS}"

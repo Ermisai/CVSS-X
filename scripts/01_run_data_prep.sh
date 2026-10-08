@@ -13,7 +13,7 @@ OUTPUT_DIR="${OUTPUT_DIR:-data/manifests}"
 SEED="${SEED:-42}"
 
 echo "=================================================================="
-echo "  XVSS-X Step 1: Source Data Preparation"
+echo "  CVSS-X Step 1: Source Data Preparation"
 echo "  Use Official Manifests: ${USE_OFFICIAL_MANIFESTS}"
 if [ "${USE_OFFICIAL_MANIFESTS}" = "true" ]; then
     echo "  Metadata Dir:           ${OFFICIAL_METADATA_DIR}"

@@ -26,7 +26,7 @@ from pipeline.utils import (
     save_manifest,
 )
 
-logger = logging.getLogger("xvss-x")
+logger = logging.getLogger("cvss-x")
 
 
 class NLLBTranslator:
@@ -144,7 +144,7 @@ def translate_split(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Step 2: NLLB Multilingual Text Translation")
+    parser = argparse.ArgumentParser(description="CVSS-X Step 2: NLLB Multilingual Text Translation")
     parser.add_argument("--manifest-dir", type=str, default="data/manifests", help="Directory containing source manifests")
     parser.add_argument("--output-dir", type=str, default="data/translated", help="Base directory for translated manifests")
     parser.add_argument("--config", type=str, default="config/languages.yaml", help="Path to languages.yaml configuration")

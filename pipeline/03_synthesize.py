@@ -3,9 +3,9 @@
 Step 3: Speech Synthesis with OmniVoice (Canonical & Timbre-Transferred).
 
 Generates parallel target speech:
-  - XVSS-X-C (Canonical): Conditioned on fixed male/female reference voices
+  - CVSS-X-C (Canonical): Conditioned on fixed male/female reference voices
     based on source speaker gender metadata (81.4% male, 18.6% female).
-  - XVSS-X-T (Timbre): Conditioned on source English audio via cross-lingual
+  - CVSS-X-T (Timbre): Conditioned on source English audio via cross-lingual
     zero-shot voice cloning. Corrupted/silent references (~3.4%) are safely skipped.
 
 Reference: CVSS-X Short Paper Section 3.1 & 3.2
@@ -30,7 +30,7 @@ from pipeline.utils import (
     save_manifest,
 )
 
-logger = logging.getLogger("xvss-x")
+logger = logging.getLogger("cvss-x")
 
 
 class OmniVoiceSynthesizer:
@@ -237,7 +237,7 @@ def synthesize_split(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Step 3: OmniVoice Speech Synthesis")
+    parser = argparse.ArgumentParser(description="CVSS-X Step 3: OmniVoice Speech Synthesis")
     parser.add_argument("--translated-dir", type=str, default="data/translated", help="Directory with translated manifests")
     parser.add_argument("--output-dir", type=str, default="data/synthesized", help="Base output directory for speech")
     parser.add_argument("--config", type=str, default="config/languages.yaml", help="Languages YAML configuration")

@@ -12,7 +12,7 @@ BATCH_SIZE="${BATCH_SIZE:-64}"
 CUDA_DEV="${CUDA_VISIBLE_DEVICES:-0}"
 
 echo "=================================================================="
-echo "  XVSS-X Step 2: NLLB Multilingual Translation"
+echo "  CVSS-X Step 2: NLLB Multilingual Translation"
 echo "  Manifest Dir: ${MANIFEST_DIR}"
 echo "  Output Dir:   ${OUTPUT_DIR}"
 echo "  Languages:    ${LANGS}"

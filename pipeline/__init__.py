@@ -1,4 +1,4 @@
 """
-XVSS-X Dataset Creation Pipeline.
+CVSS-X Dataset Creation Pipeline.
 """
 

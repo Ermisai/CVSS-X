@@ -1,5 +1,5 @@
 """
-XVSS-X Pipeline Utilities: Manifest I/O, checkpoints, text normalization, and audio helpers.
+CVSS-X Pipeline Utilities: Manifest I/O, checkpoints, text normalization, and audio helpers.
 """
 
 import json
@@ -18,7 +18,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
-logger = logging.getLogger("xvss-x")
+logger = logging.getLogger("cvss-x")
 
 
 def load_yaml(path: Union[str, Path]) -> Dict[str, Any]:

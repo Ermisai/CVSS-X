@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Step 3: OmniVoice Speech Synthesis - Canonical Mode (XVSS-X-C)
+# Step 3: OmniVoice Speech Synthesis - Canonical Mode (CVSS-X-C)
 # Uses 2 fixed reference voices per language (male & female, selected by gender).
 # ==============================================================================
 set -euo pipefail
@@ -15,7 +15,7 @@ REF_FEMALE="${REF_FEMALE:-assets/pt-female.wav}"
 CUDA_DEV="${CUDA_VISIBLE_DEVICES:-0}"
 
 echo "=================================================================="
-echo "  XVSS-X Step 3: OmniVoice Synthesis (XVSS-X-C Canonical)"
+echo "  CVSS-X Step 3: OmniVoice Synthesis (CVSS-X-C Canonical)"
 echo "  Translated Dir: ${TRANSLATED_DIR}"
 echo "  Output Dir:     ${OUTPUT_DIR}"
 echo "  Languages:      ${LANGS}"

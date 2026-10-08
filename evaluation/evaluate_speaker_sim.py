@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Speaker Similarity Evaluator (ECAPA-TDNN):
-Measures cross-lingual voice cloning fidelity for XVSS-X-T by computing
+Measures cross-lingual voice cloning fidelity for CVSS-X-T by computing
 cosine similarity between ECAPA-TDNN speaker embeddings of source English speech
 and synthesized target speech.
 
@@ -21,7 +21,7 @@ from tqdm import tqdm
 from pipeline.utils import load_manifest, save_manifest
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("xvss-x-eval")
+logger = logging.getLogger("cvss-x-eval")
 
 
 class SpeakerSimilarityEvaluator:
@@ -103,7 +103,7 @@ def evaluate_language_speaker_sim(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Speaker Similarity Evaluation (ECAPA-TDNN)")
+    parser = argparse.ArgumentParser(description="CVSS-X Speaker Similarity Evaluation (ECAPA-TDNN)")
     parser.add_argument("--samples-file", type=str, required=True, help="JSON file with sampled evaluation items")
     parser.add_argument("--output-dir", type=str, default="evaluation/results", help="Directory for results")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu", help="Compute device")

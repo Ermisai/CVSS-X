@@ -17,7 +17,7 @@ from typing import Dict, List
 from pipeline.utils import load_manifest, load_yaml, save_manifest
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("xvss-x-eval")
+logger = logging.getLogger("cvss-x-eval")
 
 
 def sample_evaluation_set(
@@ -70,7 +70,7 @@ def sample_evaluation_set(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Evaluation Sampling")
+    parser = argparse.ArgumentParser(description="CVSS-X Evaluation Sampling")
     parser.add_argument("--data-dir", type=str, default="data/synthesized", help="Directory with synthesized data")
     parser.add_argument("--output-dir", type=str, default="evaluation/samples", help="Output directory for samples")
     parser.add_argument("--config", type=str, default="config/languages.yaml", help="Languages configuration")

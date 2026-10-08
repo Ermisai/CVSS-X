@@ -13,7 +13,7 @@ SEED="${SEED:-42}"
 CUDA_DEV="${CUDA_VISIBLE_DEVICES:-0}"
 
 echo "=================================================================="
-echo "  XVSS-X Step 5: Full Quality Evaluation Suite"
+echo "  CVSS-X Step 5: Full Quality Evaluation Suite"
 echo "  Data Dir:    ${DATA_DIR}"
 echo "  Output Dir:  ${OUTPUT_DIR}"
 echo "  Sample Size: ${SAMPLE_SIZE} utterances/lang"
@@ -27,7 +27,7 @@ ${PYTHON:-python3} -m evaluation.sample_dev --data-dir "${DATA_DIR}" --variant c
 ${PYTHON:-python3} -m evaluation.sample_dev --data-dir "${DATA_DIR}" --variant timbre    --sample-size "${SAMPLE_SIZE}" --seed "${SEED}"
 
 # 2. Canonical Evaluation (ASR-BLEU & UTMOS)
-echo "[2/4] Evaluating Canonical Variant (XVSS-X-C)..."
+echo "[2/4] Evaluating Canonical Variant (CVSS-X-C)..."
 CUDA_VISIBLE_DEVICES="${CUDA_DEV}" ${PYTHON:-python3} -m evaluation.evaluate_asr_bleu \
     --samples-file evaluation/samples/eval_samples_all_canonical.json \
     --output-dir "${OUTPUT_DIR}/canonical"
@@ -37,7 +37,7 @@ CUDA_VISIBLE_DEVICES="${CUDA_DEV}" ${PYTHON:-python3} -m evaluation.evaluate_utm
     --output-dir "${OUTPUT_DIR}/canonical"
 
 # 3. Timbre Evaluation (ASR-BLEU, UTMOS, Speaker Similarity)
-echo "[3/4] Evaluating Timbre Variant (XVSS-X-T)..."
+echo "[3/4] Evaluating Timbre Variant (CVSS-X-T)..."
 CUDA_VISIBLE_DEVICES="${CUDA_DEV}" ${PYTHON:-python3} -m evaluation.evaluate_asr_bleu \
     --samples-file evaluation/samples/eval_samples_all_timbre.json \
     --output-dir "${OUTPUT_DIR}/timbre"

@@ -718,7 +718,7 @@ size_categories:
   - 10M<n<100M
 ---
 
-# XVSS-X: A Multilingual Speech-to-Speech Translation Corpus for 28 Languages
+# CVSS-X: A Multilingual Speech-to-Speech Translation Corpus for 28 Languages
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![arXiv](https://img.shields.io/badge/arXiv-2609.13413-b31b1b.svg)](https://arxiv.org/abs/2609.13413)
@@ -726,7 +726,7 @@ size_categories:
 [![PyTorch 2.1+](https://img.shields.io/badge/PyTorch-2.1%2B-orange.svg)](https://pytorch.org/)
 [![Paper](https://img.shields.io/badge/Paper-Accepted-green.svg)](#citation)
 
-This repository contains the official, reproducible pipeline and evaluation suite for **XVSS-X** (CVSS-X), a massive synthetic speech-to-speech translation (S2ST) corpus that complements and extends the original CVSS dataset by reversing the translation direction (**English → 28 target languages**).
+This repository contains the official, reproducible pipeline and evaluation suite for **CVSS-X** (CVSS-X), a massive synthetic speech-to-speech translation (S2ST) corpus that complements and extends the original CVSS dataset by reversing the translation direction (**English → 28 target languages**).
 
 ---
 
@@ -753,16 +753,16 @@ This repository contains the official, reproducible pipeline and evaluation suit
 
 ## Overview
 
-While the pioneering CVSS corpus enables translation from 21 source languages exclusively into English (many-to-one), **XVSS-X** provides one-to-many translation from English into **28 typologically diverse target languages** across 12 language families.
+While the pioneering CVSS corpus enables translation from 21 source languages exclusively into English (many-to-one), **CVSS-X** provides one-to-many translation from English into **28 typologically diverse target languages** across 12 language families.
 
-Combined with CVSS, XVSS-X enables:
+Combined with CVSS, CVSS-X enables:
 1. **Bidirectional speech-to-speech translation** (English ↔ 28 languages).
 2. **Multilingual translation** between arbitrary language pairs using English as a pivot (X → EN → Y).
 3. Direct evaluation of cross-lingual voice preservation in speech-to-speech tasks.
 
-XVSS-X is provided in two complementary variants:
-- **XVSS-X-C (Canonical)**: Target speech is synthesized using two fixed, high-clarity reference voices per language (one male, one female). Voice selection is conditioned on the source speaker's gender metadata (81.4% male, 18.6% female).
-- **XVSS-X-T (Timbre-Transferred)**: Preserves the speaker characteristics of the original English speaker in the target speech via zero-shot cross-lingual voice cloning with [OmniVoice](https://github.com/k2-fsa/OmniVoice).
+CVSS-X is provided in two complementary variants:
+- **CVSS-X-C (Canonical)**: Target speech is synthesized using two fixed, high-clarity reference voices per language (one male, one female). Voice selection is conditioned on the source speaker's gender metadata (81.4% male, 18.6% female).
+- **CVSS-X-T (Timbre-Transferred)**: Preserves the speaker characteristics of the original English speaker in the target speech via zero-shot cross-lingual voice cloning with [OmniVoice](https://github.com/k2-fsa/OmniVoice).
 
 ---
 
@@ -776,8 +776,8 @@ XVSS-X is provided in two complementary variants:
 | **Nominal Samples per Language** | 240,192 |
 | **Data Splits (per lang)** | **Train:** 222,349 • **Dev:** 10,000 • **Test:** 7,843 |
 | **Total Parallel Speech Pairs** | 6,725,176 (Canonical) + 6,724,326 (Timbre) = **13,449,502 audio files** |
-| **XVSS-X-C Duration** | ~6,730 hours (avg. 3.6s / utterance) |
-| **XVSS-X-T Duration** | ~9,340 hours (avg. 5.0s / utterance) |
+| **CVSS-X-C Duration** | ~6,730 hours (avg. 3.6s / utterance) |
+| **CVSS-X-T Duration** | ~9,340 hours (avg. 5.0s / utterance) |
 | **Total Audio Duration** | **~16,070 hours** (8x larger than CVSS) |
 
 
@@ -785,7 +785,7 @@ XVSS-X is provided in two complementary variants:
 
 ## Target Languages
 
-XVSS-X spans 28 languages across 12 typological families:
+CVSS-X spans 28 languages across 12 typological families:
 
 | Family | N | Languages (ISO Codes) |
 | :--- | :---: | :--- |
@@ -822,7 +822,7 @@ Common Voice 17 EN
               │
       ┌───────┴───────────────────────┐
       ▼                               ▼
-XVSS-X-C (Canonical)           XVSS-X-T (Timbre-Transferred)
+CVSS-X-C (Canonical)           CVSS-X-T (Timbre-Transferred)
 2 fixed reference voices       Cloned voice from English source
 (~6,730 hours)                 (~9,340 hours)
 ```
@@ -855,7 +855,7 @@ Evaluation performed on a stratified random sample of **200 utterances per langu
 
 ### Overall Comparison with CVSS (Re-evaluated with Same Pipeline)
 
-| Metric | XVSS-X-C | XVSS-X-T | CVSS-C | CVSS-T |
+| Metric | CVSS-X-C | CVSS-X-T | CVSS-C | CVSS-T |
 | :--- | :---: | :---: | :---: | :---: |
 | **UTMOS** (1–5) | 3.55 | 3.21 | 4.43 | 3.61 |
 | **ASR-BLEU** | 82.4 | 79.4 | 94.2 | 93.8 |
@@ -867,7 +867,7 @@ Evaluation performed on a stratified random sample of **200 utterances per langu
 ## Repository Structure
 
 ```
-XVSS-X/
+CVSS-X/
 ├── README.md                      # Dataset documentation and reproduction guide
 ├── LICENSE                        # CC-BY-NC 4.0 license
 ├── requirements.txt               # Unified Python dependencies
@@ -921,10 +921,10 @@ XVSS-X/
 Clone this repository and run the setup script:
 
 ```bash
-git clone https://github.com/ErmisAI/XVSS-X.git
-cd XVSS-X
+git clone https://github.com/Ermisai/CVSS-X.git
+cd CVSS-X
 ./setup_env.sh
-conda activate xvss-x  # or source .venv/bin/activate
+conda activate cvss-x  # or source .venv/bin/activate
 ```
 
 ### 2. Step 1: Source Preparation (Official vs. Custom)
@@ -970,10 +970,10 @@ Checkpoints are saved automatically every 2,000 samples for seamless resume capa
 Generate speech using OmniVoice:
 
 ```bash
-# 1. Canonical Variant (XVSS-X-C):
+# 1. Canonical Variant (CVSS-X-C):
 ./scripts/03_run_synthesis_canonical.sh
 
-# 2. Timbre-Transferred Variant (XVSS-X-T):
+# 2. Timbre-Transferred Variant (CVSS-X-T):
 ./scripts/04_run_synthesis_timbre.sh
 ```
 
@@ -993,7 +993,7 @@ The resulting Markdown report and paper tables will be generated in `evaluation/
 
 ## Hugging Face Dataset Access & WebDataset Streaming
 
-The complete dataset (~2.7 TB across 28 language pairs, 13.4M+ audio files) is being mirrored to the Hugging Face Hub under the repository [`lgris/XVSS-X`](https://huggingface.co/datasets/lgris/XVSS-X).
+The complete dataset (~2.7 TB across 28 language pairs, 13.4M+ audio files) is being mirrored to the Hugging Face Hub under the repository [`lgris/CVSS-X`](https://huggingface.co/datasets/lgris/CVSS-X).
 
 ### 1. Standard Streaming via `load_dataset`
 You can stream subsets directly per language pair without downloading the entire corpus:
@@ -1002,7 +1002,7 @@ You can stream subsets directly per language pair without downloading the entire
 from datasets import load_dataset
 
 # Stream Portuguese canonical dev split
-dataset = load_dataset("lgris/XVSS-X", "en-pt", split="dev", streaming=True)
+dataset = load_dataset("lgris/CVSS-X", "en-pt", split="dev", streaming=True)
 sample = next(iter(dataset))
 print(sample.keys())
 ```
@@ -1016,7 +1016,7 @@ from datasets import load_dataset
 # Load WebDataset shards directly in streaming mode
 dataset_wds = load_dataset(
     "webdataset",
-    data_files={"train": "https://huggingface.co/datasets/lgris/XVSS-X/resolve/main/data/en-pt/train/*/*.tar"},
+    data_files={"train": "https://huggingface.co/datasets/lgris/CVSS-X/resolve/main/data/en-pt/train/*/*.tar"},
     split="train",
     streaming=True
 )
@@ -1035,7 +1035,7 @@ print(f"Sample key: {sample_wds['__key__']}, audio sampling rate: {audio['sampli
 > **We are actively working on Version 2 (v2) of the dataset and downstream baseline models.**
 
 Key improvements and models currently planned or in progress:
-- **TAGARELA v2 Baseline Model Integration**: Adapting and training discrete-token speech-to-speech translation baselines directly on XVSS-X using the [TAGARELA v2](https://github.com/freds0/TAGARELA_v2) architecture ([`freds0/TAGARELA_v2`](https://github.com/freds0/TAGARELA_v2)).
+- **TAGARELA v2 Baseline Model Integration**: Adapting and training discrete-token speech-to-speech translation baselines directly on CVSS-X using the [TAGARELA v2](https://github.com/freds0/TAGARELA_v2) architecture ([`freds0/TAGARELA_v2`](https://github.com/freds0/TAGARELA_v2)).
 - **TranslateGemma-12B Integration**: Replacing NLLB-200 with Google's TranslateGemma-12B to significantly improve translation fidelity, natural phrasing, and eliminate commercial restrictions by transitioning to an **Apache 2.0** license.
 - **Common Voice 26 & Spontaneous Speech 4.0**: Expanding from CV17 to Common Voice 26 and integrating Spontaneous Speech 4.0, offering far richer conversational speech, more realistic disfluencies, and greater speaker diversity.
 
@@ -1043,7 +1043,7 @@ Key improvements and models currently planned or in progress:
 
 ## License
 
-The XVSS-X corpus and code are licensed as follows:
+The CVSS-X corpus and code are licensed as follows:
 - **Audio & Source Transcripts**: Inherited from Mozilla Common Voice (released under **CC0 1.0 Universal**).
 - **Synthetic Translations & Speech Pairs**: Distributed under **Creative Commons Attribution-NonCommercial 4.0 International (CC-BY-NC 4.0)** due to the underlying `facebook/nllb-200-distilled-600M` model license.
 - **Codebase & Scripts**: Released under the permissive **MIT License**.
@@ -1054,7 +1054,7 @@ See [LICENSE](LICENSE) for full legal text.
 
 ## Citation
 
-If you use XVSS-X in your research, please cite our paper:
+If you use CVSS-X in your research, please cite our paper:
 
 ```bibtex
 @misc{gris2026cvssx,

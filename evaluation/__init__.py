@@ -1,4 +1,4 @@
 """
-XVSS-X Quality Evaluation Suite.
+CVSS-X Quality Evaluation Suite.
 """
 

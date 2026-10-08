@@ -23,7 +23,7 @@ from evaluation.evaluate_utmos import UTMOSEvaluator
 from pipeline.utils import load_manifest, save_manifest
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("xvss-x-eval")
+logger = logging.getLogger("cvss-x-eval")
 
 
 def evaluate_cvss_manifest(

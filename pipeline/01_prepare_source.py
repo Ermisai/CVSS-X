@@ -25,7 +25,7 @@ from tqdm import tqdm
 
 from pipeline.utils import load_yaml, normalize_text, save_manifest
 
-logger = logging.getLogger("xvss-x")
+logger = logging.getLogger("cvss-x")
 
 
 def load_cv4_splits(cv4_dir: Path) -> Dict[str, pd.DataFrame]:
@@ -166,8 +166,8 @@ def match_and_split(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Step 1: Source Data Preparation & Alignment")
-    parser.add_argument("--use-official-manifests", action="store_true", help="Use pre-computed official XVSS-X manifests from repo metadata/")
+    parser = argparse.ArgumentParser(description="CVSS-X Step 1: Source Data Preparation & Alignment")
+    parser.add_argument("--use-official-manifests", action="store_true", help="Use pre-computed official CVSS-X manifests from repo metadata/")
     parser.add_argument("--official-metadata-dir", type=str, default="metadata", help="Directory containing official manifest_{train,dev,test}.json")
     parser.add_argument("--cv4-dir", type=str, default=None, help="Path to Common Voice v4 directory (TSVs)")
     parser.add_argument("--cv17-dir", type=str, default=None, help="Path to Common Voice v17 directory (WAVs)")

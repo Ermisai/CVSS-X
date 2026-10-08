@@ -26,7 +26,7 @@ from tqdm import tqdm
 from pipeline.utils import load_manifest, load_yaml, save_manifest
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("xvss-x-eval")
+logger = logging.getLogger("cvss-x-eval")
 
 
 def compute_levenshtein(ref_tokens: List[str], hyp_tokens: List[str]) -> float:
@@ -162,7 +162,7 @@ def evaluate_language_asr(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X ASR-BLEU & Error Rate Evaluation")
+    parser = argparse.ArgumentParser(description="CVSS-X ASR-BLEU & Error Rate Evaluation")
     parser.add_argument("--samples-file", type=str, required=True, help="JSON file with sampled evaluation items")
     parser.add_argument("--output-dir", type=str, default="evaluation/results", help="Directory for evaluation results")
     parser.add_argument("--config", type=str, default="config/languages.yaml", help="Languages configuration")

@@ -18,7 +18,7 @@ import numpy as np
 from pipeline.utils import load_manifest, load_yaml
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("xvss-x-eval")
+logger = logging.getLogger("cvss-x-eval")
 
 
 def safe_load_json(path: Path) -> Dict[str, Any]:
@@ -143,7 +143,7 @@ def format_summary_table(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="XVSS-X Evaluation Table Generator")
+    parser = argparse.ArgumentParser(description="CVSS-X Evaluation Table Generator")
     parser.add_argument("--results-dir", type=str, default="evaluation/results", help="Directory containing JSON results")
     parser.add_argument("--config", type=str, default="config/languages.yaml", help="Languages configuration")
     parser.add_argument("--output-file", type=str, default="evaluation/evaluation_report.md", help="Output report file")
